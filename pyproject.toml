@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fognet"
+version = "0.0.1"
+description = "FogNet: Biological Object Segmentation on Video data using Optical Flow-Guided Temporal Consistency."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Tristan Manneville" }
+]
+requires-python = ">=3.8"
+dependencies = [
+  "torch>=2.0",
+  "lightning>=2.0",
+  "numpy>=1.22",
+  "scipy>=1.10",
+  "scikit-image>=0.19",
+  "matplotlib>=3.5",
+  "tqdm>=4.60",
+  "numba>=0.55",
+  "tifffile>=2023.0",
+  "opencv_python>=4.12",
+  "jsonargparse>=4.42.0",
+  "tensorboard"
+]
+
+[project.urls]
+Homepage = "https://github.com/trmannev/FogNet"
+Issues = "https://github.com/trmannev/FogNet/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fognet*"]

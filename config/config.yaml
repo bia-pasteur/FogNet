@@ -1,0 +1,47 @@
+# config/config.yaml
+
+trainer:
+  max_epochs: 30
+  accelerator: gpu
+  devices: 1
+  log_every_n_steps: 50
+  check_val_every_n_epoch: 5
+  callbacks:
+    - class_path: lightning.pytorch.callbacks.ModelCheckpoint
+      init_args:
+        monitor: val_loss
+        mode: min
+        save_top_k: 1
+        filename: best_val_loss
+        save_last: true
+  logger:
+    - class_path: lightning.pytorch.loggers.TensorBoardLogger
+      init_args:
+        save_dir: "training_logs"
+        name: "fognet_3"
+
+model:
+  window_size: 3
+  lr: 1e-3
+  lr_sigma: 1.0
+  sigma_param: 
+  precalculate_flow: false
+  max_epochs : 30
+  
+
+data:
+  root_folder: "/home/tristan/code/SINETRA/dataset/hydra_flow/0.2-50.0"
+  window_size: 3
+  subfolders: ["111", "222", "333"]
+  mask_dir_name: "tracks"
+  train_val_test_split: false
+  max_length_of_training_samples: 200
+  max_length_of_validation_samples: 50
+  max_length_of_testing_samples: 200
+  train_val_test_split: false
+  batch_size: 1
+  shuffle: true
+  seed: 42
+  precalculate_flow: false
+
+

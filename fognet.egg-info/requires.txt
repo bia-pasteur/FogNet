@@ -1,0 +1,12 @@
+torch>=2.0
+lightning>=2.0
+numpy>=1.22
+scipy>=1.10
+scikit-image>=0.19
+matplotlib>=3.5
+tqdm>=4.60
+numba>=0.55
+tifffile>=2023.0
+opencv_python>=4.12
+jsonargparse>=4.42.0
+tensorboard
