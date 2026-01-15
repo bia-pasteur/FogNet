@@ -21,7 +21,7 @@ It extends a U-Net architecture with **optical-flow-guided temporal consistency*
 FogNet is not currently hosted on PyPI. To install it locally:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/bia-pasteur/FogNet
 cd FogNet
 pip install .
 ```
